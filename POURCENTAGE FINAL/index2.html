@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="logo.png" alt="logo" />
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#" >
+          <i class="fa-light fa-file-circle-plus "></i>
+          <span class="links_name " >Abssence</span>
+        </a>
+         <span class="tooltip">Abssence</span>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fa-light fa-file-magnifying-glass"></i>
+         <span class="links_name">Recherche</span>
+       </a>
+       <span class="tooltip">Recherche</span>
+     </li>
+     <li>
+       <a href="#" class="active">
+        <i class="fa-light fa-percent active"></i>
+         <span class="links_name active">Pourcentage</span>
+       </a>
+       <span class="tooltip">Pourcentage</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class="fa-light fa-chalkboard-user"></i>
+         <span class="links_name">Formateur</span>
+       </a>
+       <span class="tooltip">Formateur</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class="fa-light fa-file-pen"></i>
+         <span class="links_name">Note</span>
+       </a>
+       <span class="tooltip">Note</span>
+     </li>
+     <li>
+       <a href="#">
+        <i class="fa-light fa-gear"></i>
+         <span class="links_name">Parametre</span>
+       </a>
+       <span class="tooltip">Parametre</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+          <i class="fa-light fa-circle-user"></i>
+           <div class="name_job">
+             <div class="name">Madame Sanaa</div>
+           </div>
+         </div>
+         <i class="fa-light fa-right-from-bracket" id="log_out"></i>
+     </li>
+    </ul>
+  </div>
+  <div class="home-section" align="center"> 
+    <div class="form">
+      <form method="post" >
+          <div class="lol">
+              <div class="sel" id="sele">
+                  <ul class="ul">
+                      <li>
+                          <select id="année-scolaire" required>
+                              <option value="">ANNEE</option>
+                              
+                          </select></li>
+                      <li>
+                          <select id="filiére" required>
+                              <option value="">FILIERE</option>
+                              
+                          </select></li>
+                      <li>
+                          <select id="groupe" required>
+                              <option value="">GROUPE</option>
+                              
+                          </select>
+                      </li>
+                      
+                      <li><input   type="submit" value="valider" id="valider" class="btn_valider"></li>
+                  </ul>
+              </div>
+          </div>
+      </form>
+  </div>
+  </div>
+  </div>
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); //calling the function(optional)
+  });
+
+  // following are the code to change sidebar button(optional)
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+   }
+  }
+  // Create a condition that targets viewports at least 768px wide
+const mediaQuery = window.matchMedia("(mix-width: 500px)");
+if (mediaQuery.matches){
+   console.log('500');
+  }
+const mediaQuery1 = window.matchMedia("(max-width: 1000px)" );
+if (mediaQuery1.matches){
+   console.log('1000');
+  }
+
+
+
+
+  </script>
+</body>
+</html>
